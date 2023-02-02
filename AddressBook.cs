@@ -65,15 +65,30 @@ namespace Address_Book
             {
                 Console.WriteLine("No contact present with given name");
             }
-            contact= AddToContact();
+            contact = AddToContact();
             for (int i = 0; i < contacts.Count; i++)
             {
-                if (contacts[i].FirstName==name)
+                if (contacts[i].FirstName == name)
                 {
                     contacts[i] = contact; break;
                 }
             }
             Console.WriteLine("Contact Edited successfully");
+
+        }
+        public void DeleteContact()
+        {
+            Console.WriteLine("Enter the FirstName of the contact to Delete");
+            string dname = Console.ReadLine();
+            for (int i = 0; i < contacts.Count; i++)
+            {
+                if (contacts[i].FirstName.Equals(dname))
+                {
+                    contacts.RemoveAt(i);
+                    Console.WriteLine("Contact deleted Successfully");
+                }
+            }
+
 
         }
     }
