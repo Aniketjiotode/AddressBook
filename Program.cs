@@ -16,6 +16,7 @@ namespace Address_Book
                 switch (result)
                 {
                     case 1: address.AddToContact(); break;
+                    case 2: address.Display(); break;
                 }
             }
         }
