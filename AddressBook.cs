@@ -36,7 +36,7 @@ namespace Address_Book
         {
             if (contacts.Count <= 0)
             {
-                Console.WriteLine("No contacts available");
+               Console.WriteLine("No contacts available");
             }
             else
             {
