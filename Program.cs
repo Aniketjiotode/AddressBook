@@ -8,12 +8,16 @@ namespace Address_Book
         {
             Console.WriteLine("Welcome to AddressBook");
             AddressBook address = new AddressBook();
-                Console.WriteLine("Enter 1 to Add a new contact \n Enter 2 to Diplay all Contacts");
+            while (true)
+            {
+                Console.WriteLine("Enter 1 to add a new contact \n Enter 2 to Diplay all Contacts \n Enter 3 to Edit all Contacts");
                 int result = int.Parse(Console.ReadLine());
+
                 switch (result)
                 {
                     case 1: address.AddToContact(); break;
                     case 2: address.Display(); break;
+                    case 3: address.EditContact(); break;
                 }
             }
         }

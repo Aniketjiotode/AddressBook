@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml.Linq;
 
 namespace Address_Book
 {
@@ -8,20 +9,20 @@ namespace Address_Book
     {
         public List<Contact> contacts;
         public AddressBook()
-        { 
+        {
             contacts = new List<Contact>();
         }
-        public void AddToContact()
+        public Contact AddToContact()
         {
-            var contact = new Contact();
+            Contact contact = new Contact();
             Console.WriteLine("Enter FirstName:");
             contact.FirstName = Console.ReadLine();
             Console.WriteLine("Enter LastName:");
             contact.LastName = Console.ReadLine();
             Console.WriteLine("Enter Address");
-            contact.Address =Console.ReadLine();
+            contact.Address = Console.ReadLine();
             Console.WriteLine("Enter City");
-            contact.City =Console.ReadLine();
+            contact.City = Console.ReadLine();
             Console.WriteLine("Enter State");
             contact.State = Console.ReadLine();
             Console.WriteLine("Enter Email Id");
@@ -31,20 +32,49 @@ namespace Address_Book
             Console.WriteLine("Enter Phone Number");
             contact.PhoneNumber = int.Parse(Console.ReadLine());
             contacts.Add(contact);
+            return contact;
         }
         public void Display()
         {
             if (contacts.Count <= 0)
             {
-               Console.WriteLine("No contacts available");
+                Console.WriteLine("No contacts available");
             }
             else
             {
                 foreach (var contact in contacts)
                 {
-                   Console.WriteLine("FirstName: " + contact.FirstName + "\n LastName:" + contact.LastName + "\n Address: " + contact.Address + "\n City: "+contact.City + "\n State: "+contact.State + "\n Email Id"+contact.Email + "\n ZipCode: "+contact.ZipCode + "\n Phone number: "+contact.PhoneNumber);
+                    Console.WriteLine("FirstName: " + contact.FirstName + "\n LastName:" + contact.LastName + "\n Address: " + contact.Address + "\n City: " + contact.City + "\n State: " + contact.State + "\n Email Id" + contact.Email + "\n ZipCode: " + contact.ZipCode + "\n Phone number: " + contact.PhoneNumber);
                 }
             }
+
+        }
+        public void EditContact()
+        {
+            Console.WriteLine("Enter FirstName of conatc to edit that contact");
+            string name = Console.ReadLine();
+            Contact contact = null;
+            foreach (var res in contacts)
+            {
+                if (res.FirstName == name)
+                {
+                    contact = res;
+                }
+            }
+            if (contact == null)
+            {
+                Console.WriteLine("No contact present with given name");
+            }
+            contact= AddToContact();
+            for (int i = 0; i < contacts.Count; i++)
+            {
+                if (contacts[i].FirstName==name)
+                {
+                    contacts[i] = contact; break;
+                }
+            }
+            Console.WriteLine("Contact Edited successfully");
+
         }
     }
 }
