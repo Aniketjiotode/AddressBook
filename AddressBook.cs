@@ -8,9 +8,11 @@ namespace Address_Book
     public class AddressBook
     {
         public List<Contact> contacts;
-        public AddressBook()
+        public string AddressBook_Name;
+        public AddressBook(string addressbookName)
         {
             contacts = new List<Contact>();
+            AddressBook_Name = addressbookName;
         }
         public Contact AddToContact()
         {
@@ -44,7 +46,7 @@ namespace Address_Book
             {
                 foreach (var contact in contacts)
                 {
-                    Console.WriteLine("FirstName: " + contact.FirstName + "\n LastName:" + contact.LastName + "\n Address: " + contact.Address + "\n City: " + contact.City + "\n State: " + contact.State + "\n Email Id" + contact.Email + "\n ZipCode: " + contact.ZipCode + "\n Phone number: " + contact.PhoneNumber);
+                    Console.WriteLine("AddressBook Name: " + AddressBook_Name + "\n FirstName: " + contact.FirstName + "\n LastName:" + contact.LastName + "\n Address: " + contact.Address + "\n City: " + contact.City + "\n State: " + contact.State + "\n Email Id" + contact.Email + "\n ZipCode: " + contact.ZipCode + "\n Phone number: " + contact.PhoneNumber);
                 }
             }
 
