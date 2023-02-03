@@ -42,7 +42,7 @@ namespace Address_Book
             {
                 foreach (var contact in contacts)
                 {
-                    Console.WriteLine("FirstName: " + contact.FirstName + "\n LastName:" + contact.LastName + "\n Address: " + contact.Address + "\n City: "+contact.City + "\n State: "+contact.State + "\n Email Id"+contact.Email + "\n ZipCode: "+contact.ZipCode + "\n Phone number: "+contact.PhoneNumber);
+                   Console.WriteLine("FirstName: " + contact.FirstName + "\n LastName:" + contact.LastName + "\n Address: " + contact.Address + "\n City: "+contact.City + "\n State: "+contact.State + "\n Email Id"+contact.Email + "\n ZipCode: "+contact.ZipCode + "\n Phone number: "+contact.PhoneNumber);
                 }
             }
         }
