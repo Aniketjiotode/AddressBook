@@ -17,7 +17,6 @@ namespace Address_Book
                 {
                     case 1: address.AddToContact(); break;
                     case 2: address.Display(); break;
-                    case 3: address.EditContact(); break;
                 }
             }
         }

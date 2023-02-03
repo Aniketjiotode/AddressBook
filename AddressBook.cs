@@ -47,34 +47,6 @@ namespace Address_Book
                     Console.WriteLine("FirstName: " + contact.FirstName + "\n LastName:" + contact.LastName + "\n Address: " + contact.Address + "\n City: " + contact.City + "\n State: " + contact.State + "\n Email Id" + contact.Email + "\n ZipCode: " + contact.ZipCode + "\n Phone number: " + contact.PhoneNumber);
                 }
             }
-
-        }
-        public void EditContact()
-        {
-            Console.WriteLine("Enter FirstName of conatc to edit that contact");
-            string name = Console.ReadLine();
-            Contact contact = null;
-            foreach (var res in contacts)
-            {
-                if (res.FirstName == name)
-                {
-                    contact = res;
-                }
-            }
-            if (contact == null)
-            {
-                Console.WriteLine("No contact present with given name");
-            }
-            contact= AddToContact();
-            for (int i = 0; i < contacts.Count; i++)
-            {
-                if (contacts[i].FirstName==name)
-                {
-                    contacts[i] = contact; break;
-                }
-            }
-            Console.WriteLine("Contact Edited successfully");
-
-        }
+        } 
     }
 }
