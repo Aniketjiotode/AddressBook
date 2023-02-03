@@ -73,6 +73,7 @@ namespace Address_Book
                     contacts[i] = contact; break;
                 }
             }
+
             Console.WriteLine("Contact Edited successfully");
 
         }
@@ -80,13 +81,21 @@ namespace Address_Book
         {
             Console.WriteLine("Enter the FirstName of the contact to Delete");
             string dname = Console.ReadLine();
+            bool flag = true;
+
             for (int i = 0; i < contacts.Count; i++)
             {
-                if (contacts[i].FirstName.Equals(dname))
+                if (contacts[i].FirstName==dname)
                 {
                     contacts.RemoveAt(i);
                     Console.WriteLine("Contact deleted Successfully");
-                }
+                    flag = false;
+
+                }   
+            }
+            if (flag)
+            {
+                 Console.WriteLine($"No contact present of {dname} name");
             }
 
 
