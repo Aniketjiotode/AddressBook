@@ -47,7 +47,6 @@ namespace Address_Book
                     Console.WriteLine("FirstName: " + contact.FirstName + "\n LastName:" + contact.LastName + "\n Address: " + contact.Address + "\n City: " + contact.City + "\n State: " + contact.State + "\n Email Id" + contact.Email + "\n ZipCode: " + contact.ZipCode + "\n Phone number: " + contact.PhoneNumber);
                 }
             }
-
         }
         public void EditContact()
         {
@@ -73,9 +72,7 @@ namespace Address_Book
                     contacts[i] = contact; break;
                 }
             }
-
             Console.WriteLine("Contact Edited successfully");
-
         }
         public void DeleteContact()
         {
@@ -90,15 +87,12 @@ namespace Address_Book
                     contacts.RemoveAt(i);
                     Console.WriteLine("Contact deleted Successfully");
                     flag = false;
-
                 }   
             }
             if (flag)
             {
                  Console.WriteLine($"No contact present of {dname} name");
             }
-
-
         }
     }
 }

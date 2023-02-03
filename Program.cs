@@ -12,7 +12,6 @@ namespace Address_Book
             {
                 Console.WriteLine("Enter 1 to Add a new contact \n Enter 2 to Diplay all Contacts \n Enter 3 to Diplay Edit Contacts \n Enter 4 to Delete Contacts");
                 int result = int.Parse(Console.ReadLine());
-
                 switch (result)
                 {
                     case 1: address.AddToContact(); break;
